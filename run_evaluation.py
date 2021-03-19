@@ -1,4 +1,5 @@
 import argparse
+import os
 import pandas as pd
 from gensim.models import KeyedVectors
 
@@ -28,7 +29,7 @@ def evaluate_similarity(path,
     result = (data_set + ' mean_cos_sim', sum(cos_sims) / n)
 
     # при желаний сохранить результаты в таблицу
-    # data.to_csv('./{}_cos_sim.csv'.format(data_set), index=False)
+    # data.to_csv('./results/{}_cos_sim.csv'.format(data_set), index=False)
     return result
 
 
@@ -168,6 +169,10 @@ if __name__ == '__main__':
                                './data/analogies/Med_anal.csv']
 
     MODEL_PATH = args.model_path
+
+    if not os.path.exists('results'):
+        os.makedirs('results')
+
     if args.sim_data:
         LIST_OF_SIM_DATASETS.extend(args.sim_data)
 
