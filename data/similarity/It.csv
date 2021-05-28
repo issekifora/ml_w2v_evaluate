@@ -28,7 +28,7 @@ bubble_sort,quick_sort
 buffer,memory
 bytecode,encoding
 bit,byte
-combinatorics,factorial
+combinatoric,factorial
 combination,permutation
 GPU,CUDA
 csv,comma_separate_value
@@ -70,7 +70,7 @@ pooling,max_pooling
 t_test,students_test
 variance,standart_deviation
 integration,lebesgue_measure
-eigenvectors,characteristic_polynomial
+eigenvector,characteristic_polynomial
 confidence_interval,p_value
 hypothesis,hypothesis_testing
 anova,variance_analysis
@@ -100,12 +100,12 @@ CRM,customer_relationship_manager
 random_variable,probability_theory
 release,launch
 inference,test
-bag_of_words,bow
+bag_of_word,bow
 cbow,skipgram
 LSTM,long_short_term_memory
 gru,gated_recurrent_unit
 HMM,hidden_markov_model
-knn,k_nearest_neighbours
+knn,k_nearest_neighbour
 matrix,linear_map
 differential,dx
 q_learning,reinforcement_learning
