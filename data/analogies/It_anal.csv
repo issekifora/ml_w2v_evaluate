@@ -27,6 +27,6 @@ task-ml_model,gan,image_generation,gpt,text_generation
 task-ml_model,gan,image_generation,seq2seq,machine_translation
 task-ml_model,gan,image_generation,bert,sentiment_classification
 task-ml_model,gan,image_generation,rnn,pos_tagging
-task-ml_model,gan,image_generation,kmeans,clusterisation
+task-ml_model,gan,image_generation,kmean,clusterisation
 task-ml_model,gan,image_generation,cnn,image_recognition
 task-ml_model,gan,image_generation,actor_critic,reinforcement_learning

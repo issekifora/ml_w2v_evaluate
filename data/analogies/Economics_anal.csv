@@ -17,9 +17,9 @@ economic_theory-representative,stafford,mercantilism,Keynes,Keynesianism
 economic_theory-representative,stafford,mercantilism,Weber,institutionalism
 type_of_tax-object,federal_tax,customs_duty,regional_tax,property_tax
 type_of_tax-object,federal_tax,customs_duty,local_tax,land_tax
-type_of_resource-resource,Natural_resources,land,financial_resources,money
-type_of_resource-resource,Natural_resources,land,material_resources,raw_material
-type_of_resource-resource,Natural_resources,land,informational_resources,data
+type_of_resource-resource,natural_resources,land,financial_resources,money
+type_of_resource-resource,natural_resources,land,material_resources,raw_material
+type_of_resource-resource,natural_resources,land,informational_resources,data
 type_of_property - example,common_property,natural_resources,private_property,real_estate
 type_of_property - example,common_property,natural_resources,mixed_property,monument
 financial_institution-function,money_transaction,bank,securities_sale,investment_companies

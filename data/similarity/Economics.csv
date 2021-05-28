@@ -111,7 +111,7 @@ asset,benefit
 unemployment_rate,jobless_rate
 balance_of_trade,bot
 gnp,gross_national_product
-consumption_goods,commodity
+consumption_good,commodity
 money,cash
 precious_metal,noble_metal
 government,authority
