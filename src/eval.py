@@ -2,7 +2,6 @@ import collections
 import itertools
 import logging
 import statistics
-
 from gensim.models import KeyedVectors
 
 from data.analogies.en import ANALOGIES
@@ -111,7 +110,6 @@ def get_model_statistics(model_path):
     similarities_enhanced = enhance_collection(SIM, fields=["word1", "word2"])
     analogies_enhanced = enhance_collection(ANALOGIES, fields=["word1", "word2", "answer", "query"])
 
-    logger.info("Model loading...")
     model = KeyedVectors.load_word2vec_format(model_path, binary=True)
 
     logger.info("Calculating cosine similarity")
