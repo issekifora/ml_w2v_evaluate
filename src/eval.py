@@ -84,7 +84,7 @@ def evaluate_analogies(model, analogies_collections):
 
     result = {
         "analogies_accuracy": accurate_predictions / sum(map(len, ANALOGIES.values())),
-        "similarity_by_groups": {k: v / len(ANALOGIES[k]) for k, v in accurate_predictions_by_group.items()},
+        "analogies_by_groups": {k: v / len(ANALOGIES[k]) for k, v in accurate_predictions_by_group.items()},
     }
 
     return result
