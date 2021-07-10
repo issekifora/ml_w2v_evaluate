@@ -29,6 +29,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--update_model_stats", required=True, help="Загружать ли статистику модели в репозиторий", type=bool
     )
+    parser.add_argument("--language", required=True, help="Язык модели")
     args = parser.parse_args()
 
     meta = json.loads(pathlib.Path(args.model_meta_path).read_text())
@@ -36,7 +37,7 @@ if __name__ == "__main__":
     model_path = str(pathlib.Path(*pathlib.Path(args.model_meta_path).parts[:-1]).joinpath(meta["model_file"]))
     collection_name = meta["model_name"].replace("-", "_")
 
-    statistics = get_model_statistics(model_path)
+    statistics = get_model_statistics(model_path, args.language)
     print("model statistics:\n")
     pprint.pprint(statistics)
     print("Missing terms:\n")
