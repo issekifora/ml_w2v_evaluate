@@ -4,8 +4,8 @@ import logging
 import statistics
 from gensim.models import KeyedVectors
 
-from data.analogies.en import ANALOGIES
-from data.similarity.en import SIM
+# from data.analogies.en import ANALOGIES
+# from data.similarity.en import SIM
 
 logger = logging.getLogger(__name__)
 missing_terms = set()
@@ -105,7 +105,18 @@ def enhance_collection(collection, fields):
     return enhanced
 
 
-def get_model_statistics(model_path):
+def get_model_statistics(model_path, lang):
+
+    if lang == "en":
+        from data.analogies.en import ANALOGIES
+        from data.similarity.en import SIM
+    elif lang == "ru":
+        from data.analogies.ru import ANALOGIES
+        from data.similarity.ru import SIM
+    else:
+        logger.info("This language is not supported yet")
+        return
+
     logger.info("Enhancing datasets")
     similarities_enhanced = enhance_collection(SIM, fields=["word1", "word2"])
     analogies_enhanced = enhance_collection(ANALOGIES, fields=["word1", "word2", "answer", "query"])
