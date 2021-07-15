@@ -42,7 +42,7 @@ def evaluate_similarity(model, similarities_collection):
             missing_groups[area] = missing / len(similarities)
     result = {
         "similarity_overall": statistics.mean(sim_overall),
-        "missing_overall": missing_overall / sum(map(len, SIM.values())),
+        "missing_overall": missing_overall / sum(map(len, similarities_collection.values())),
         "similarity_by_groups": {k: statistics.mean(v) for k, v in sim_groups.items()},
         "missing_by_groups": missing_groups,
     }
@@ -83,8 +83,8 @@ def evaluate_analogies(model, analogies_collections):
                 accurate_predictions_by_group[area] += 1
 
     result = {
-        "analogies_accuracy": accurate_predictions / sum(map(len, ANALOGIES.values())),
-        "analogies_by_groups": {k: v / len(ANALOGIES[k]) for k, v in accurate_predictions_by_group.items()},
+        "analogies_accuracy": accurate_predictions / sum(map(len, analogies_collections.values())),
+        "analogies_by_groups": {k: v / len(analogies_collections[k]) for k, v in accurate_predictions_by_group.items()},
     }
 
     return result
