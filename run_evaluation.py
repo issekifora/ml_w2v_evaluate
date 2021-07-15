@@ -46,6 +46,11 @@ if __name__ == "__main__":
         es.update(
             index=config.es_w2v_models_repo,
             id=collection_name,
-            body={"doc": {"performance": statistics}},
+            body={
+                "doc": {
+                    "performance": statistics,
+                    "dataset": {"version": config.dataset_version, "language": args.language},
+                }
+            },
             request_timeout=3000,
         )

@@ -39,12 +39,12 @@ def evaluate_similarity(model, similarities_collection):
                 missing_overall += 1
             sim_overall.append(cos_sim)
             sim_groups[area].append(cos_sim)
-            missing_groups[area] = missing / len(similarities)
+            missing_groups[area] = 1 - missing / len(similarities)
     result = {
         "similarity_overall": statistics.mean(sim_overall),
-        "missing_overall": missing_overall / sum(map(len, similarities_collection.values())),
+        "completeness_overall": 1 - missing_overall / sum(map(len, similarities_collection.values())),
         "similarity_by_groups": {k: statistics.mean(v) for k, v in sim_groups.items()},
-        "missing_by_groups": missing_groups,
+        "completeness_by_groups": missing_groups,
     }
 
     return result
